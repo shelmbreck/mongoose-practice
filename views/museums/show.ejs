@@ -1,3 +1,35 @@
-<!-- DELETE CODE BELOW THIS LINE -->
-<h2>TODO: Show a specific Museum</h2>
-<p>Show a list of pieces in this museum</p>
+<h2 class="text-center"><%= museum.name%></h2>
+
+<div class="image-container">
+  <img alt="museum pic" src="<%= museum.image %>" class="reasonable-image-size">
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <h3>Description</h3>
+    <p>
+      <%= museum.name %> is located in <%= museum.city %>, <%= museum.country %>.
+    </p>
+    <p>
+      Lorem ipsum dolor amet occupy pour-over hexagon humblebrag, tofu lyft whatever mumblecore four loko
+      orage celiac banjo. Selvage freegan wolf gentrify artisan +1 meditation taiyaki. Fingerstache migas
+      austin, vegan gochujang health goth DIY meh unicorn man braid salvia pug pickled. Meh drinking vinegar
+      cavore fixie. Meditation blog 3 wolf moon, pitchfork cardigan austin bicycle rights wayfarers
+      heirloom scenester.
+    </p>
+  </div>
+  <div class="col-6">
+    <h3>Most Famous Pieces</h3>
+    <% if(museum.pieces && museum.pieces.length > 0) { %>
+      <% museum.pieces.forEach(p => { %>
+        <div>
+          <a href="/pieces/<%=p.id%>">
+            <%= p.name %>
+          </a>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>Nothing here yet...</p>
+    <% } %>
+  </div>
+</div>

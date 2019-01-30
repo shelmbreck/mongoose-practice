@@ -1,3 +1,34 @@
 <!-- DELETE CODE BELOW THIS LINE -->
-<h2>TODO: Show a specific Museum</h2>
-<p>Show a list of pieces in this museum</p>
+<h2><%= museum.name %></h2>
+
+<div>
+  <img src="<%= museum.image %>">
+</div>
+<h3>Description</h3>
+<p>
+  <%= museum.name %> is located in <%= museum.city %>, <%= museum.country %>. Lorem ipsum dolor amet copper mug readymade tbh, bushwick kombucha gluten-free chartreuse post-ironic church-key air plant kale chips tumblr. Waistcoat kitsch whatever forage. Blue bottle chillwave DIY prism hell of, tumblr migas coloring book jianbing aesthetic letterpress selfies austin. Mlkshk single-origin coffee mustache kogi waistcoat hella scenester copper mug cornhole swag DIY.
+</p>
+<p>
+  Fam wolf chartreuse glossier kombucha literally. Ethical kitsch chia, DIY air plant poutine 90's biodiesel. Pickled actually af, blue bottle pour-over deep v pork belly activated charcoal tumeric forage you probably haven't heard of them schlitz freegan roof party selfies. Trust fund paleo gastropub vexillologist.
+</p>
+
+<div>
+  <h3>Most Famous Pieces</h3>
+  <% if(museum.pieces.length > 0) { %>
+    <% museum.pieces.forEach(p => { %>
+      <div>
+        <a href="/pieces/<%= p.id %>">
+          <%= p.name %>
+        </a>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <p>Nothing here yet!</p>
+  <% } %>
+</div>
+
+
+
+
+
+

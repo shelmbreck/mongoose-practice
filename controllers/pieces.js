@@ -1,12 +1,21 @@
 // Require needed modules
 const express = require('express');
 
-// Declare router
+// Declare router and models reference
 const router = express.Router();
+const db = require('../models');
 
 router.get('/', (req, res) => {
-  // TODO: Replace stub route with page that renders list of all pieces
-  res.render('pieces/index');
+  // Replace stub route with page that renders list of all pieces
+  db.Piece.find()
+  .populate('museum')
+  .then(pieces => {
+    res.render('pieces/index', { pieces: pieces });
+  })
+  .catch(err => {
+    console.log('Error in GET /pieces route:', err);
+    res.send('TODO: Create error.ejs to render nice error pages!');
+  });
 });
 
 router.post('/', (req, res) => {

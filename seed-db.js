@@ -1,7 +1,5 @@
 const db = require('./models');
 
-
-
 db.Museum.create({
   name: 'Musée du Louvre',
   city: 'Paris',
@@ -34,5 +32,3 @@ db.Museum.create({
 .catch(err => {
   console.log('Error Message', err);
 });
-
-// process.exit();

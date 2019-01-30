@@ -1,5 +1,4 @@
 // TODO: Require needed node modules
-const bodyParser = require('body-parser');
 const express = require('express');
 const expressEjsLayouts = require('express-ejs-layouts');
 
@@ -11,7 +10,7 @@ app.set('view engine', 'ejs');
 
 // TODO: Middleware, etc
 app.use(expressEjsLayouts);
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 // Declare controllers
 app.use('/museums', require('./controllers/museums'));

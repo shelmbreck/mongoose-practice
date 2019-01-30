@@ -71,7 +71,7 @@ For this we'll take a short journey backward into Node, Express, and EJS!
 
 There are stubs for your model index file, and the museum and piece models. Hints are written inline that lay out the steps you need to do yourself.
 
-*Don't be daunted!* Mongoose is a lot like Sequelize, so using it will feel a little bit familiar even though it's new to you! When you need to know what to do, look up the [Mongoose docs](https://mongoosejs.com/docs/guide.html) and try to find something that looks like an equivalent. You can also refer to the [class notes](https://gawdiseattle.gitbooks.io/wdi/05-express/express-mongoose/readme.html) for all the CRUD examples.
+*Don't be daunted!* Mongoose is a lot like Sequelize, so using it will feel a little bit familiar even though it's new to you! When you need to know what to do, look up the [Mongoose docs](https://mongoosejs.com/docs/guide.html) and try to find something that looks like an equivalent. You can also refer to the [class notes](https://gawdiseattle.gitbooks.io/wdi/05-node-express/express-mongoose/readme.html) for all the CRUD examples.
 
 #### Museum
 
@@ -142,5 +142,5 @@ Once your forms for adding museums and pieces works:
 * [Mongoose Connections](https://mongoosejs.com/docs/connections.html)
 * [Using Sub-documents](https://mongoosejs.com/docs/subdocs.html)
 * [Finding a subdocument by ID](https://mongoosejs.com/docs/subdocs.html) (down page!)
-* [Class notes](https://gawdiseattle.gitbooks.io/wdi/05-express/express-mongoose/readme.html)
+* [Class notes](https://gawdiseattle.gitbooks.io/wdi/05-node-express/express-mongoose/readme.html)
 * [Top 10 Most Famous Pieces of Art](https://www.touropia.com/most-famous-paintings/)

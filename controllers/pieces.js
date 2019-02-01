@@ -20,12 +20,40 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   // TODO: Replace stub route with page that renders form for adding new piece
-  res.send('STUB - NEW PIECES POST');
+  console.log(req.body);
+  db.Piece.create({
+    name: req.body.name,
+    image: req.body.image,
+    originCountry: req.body.originCountry,
+    museum: req.body.museumId,
+    creator: {
+      firstname: req.body.creatorFirstname,
+      lastname: req.body.creatorLastname,
+      image: req.body.creatorImage,
+      birthyear: req.body.creatorBirth,
+      deathyear: req.body.creatorDeath
+    }
+  })
+  .then(result => {
+    console.log('successfully created Mona Lisa');
+    res.redirect('/pieces');
+  })
+  .catch(err => {
+    console.log('Error Message', err);
+    res.send('An error happened');
+  });
 });
 
 router.get('/new', (req, res) => {
-  // TODO: Replace stub route with page that renders form for adding new piece
-  res.render('pieces/new');
+  // Replace stub route with page that renders form for adding new piece
+  db.Museum.find()
+  .then(museums => {
+    res.render('pieces/new', { museums: museums });
+  })
+  .catch(err => {
+    console.log('Error Message', err);
+    res.send('An error happened');
+  });
 });
 
 router.get('/:id', (req, res) => {

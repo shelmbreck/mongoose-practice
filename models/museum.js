@@ -1,8 +1,24 @@
 // Require Mongoose node module
-const mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-// TODO: Create Museum Schema
+let museumSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  city: {
+    type: String,
+    required: true
+  },
+  country: {
+    type: String,
+    required: true
+  },
+  image: {
+    type: String,
+    required: true
+  },
+})
 
-// TODO: Use schema to create model
+module.exports = mongoose.model('Museum', museumSchema)
 
-// TODO: Export Museum Model
